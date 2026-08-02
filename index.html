@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KETTANI CLIM & ENERGIE | Climatisation à Casablanca</title>
+  <meta name="description" content="Installation, dépannage et entretien de climatisation à Casablanca. Demandez une estimation à KETTANI CLIM & ENERGIE.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Cairo:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/index-BGn8PLMV.css">
+  <style>
+    /* Hide any injected consent bar (from original) */
+    .consent-bar,.footer > #cookie-law-info-bar{display:none!important;}
+
+    /* ---- Wire the design-system fonts to the variables the CSS expects ---- */
+    :root{
+      --font-display:'Barlow Condensed', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body:'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono:'IBM Plex Mono', monospace;
+      --ink:#0b2430;
+      --deep:#061824;
+      --blue:#087fbd;
+      --cyan:#55d4e7;
+      --ice:#eaf8fc;
+      --coral:#ff7042;
+      --line:rgba(11,36,48,0.12);
+    }
+
+    /* ================= ARABIC / RTL ================= */
+    html[dir="rtl"]{
+      --font-display:'Cairo', sans-serif;
+      --font-body:'Cairo', sans-serif;
+      --font-mono:'Cairo', sans-serif;
+    }
+    /* letter-spacing detaches Arabic letters — force it off in RTL */
+    html[dir="rtl"] *{ letter-spacing:normal !important; }
+    /* Arabic display type needs a little more vertical room than condensed Latin */
+    html[dir="rtl"] .hero h1{ font-size:clamp(40px,6.2vw,76px); line-height:1.2; }
+    html[dir="rtl"] .section-heading h2,
+    html[dir="rtl"] .method h2,
+    html[dir="rtl"] .location h2,
+    html[dir="rtl"] .final-cta h2{ line-height:1.25; }
+    html[dir="rtl"] .service-card h3{ line-height:1.3; margin-top:36px; }
+    html[dir="rtl"] .steps strong{ line-height:1.4; }
+    html[dir="rtl"] .brand-copy strong{ line-height:1; }
+    /* Mirror the dividers/borders the layout hard-codes to one side */
+    html[dir="rtl"] .trust-inner p{ border-right:0; border-left:1px solid rgba(85,212,231,0.35); padding:0 28px; }
+    html[dir="rtl"] .trust-inner p:first-child{ padding-right:0; }
+    html[dir="rtl"] .trust-inner p:last-child{ border-left:0; }
+    html[dir="rtl"] .console-proof div{ border-right:0; border-left:1px solid rgba(255,255,255,0.14); }
+    html[dir="rtl"] .console-proof div:last-child{ border-left:0; }
+    html[dir="rtl"] .site-header nav a:after{ left:auto; right:0; }
+    html[dir="rtl"] .steps li:hover{ transform:translateX(-6px); }
+
+    /* ================= LANGUAGE TOGGLE ================= */
+    .site-header{ grid-template-columns:1fr auto auto; }
+    .header-right{ display:flex; align-items:center; gap:16px; justify-self:end; }
+    .lang-toggle{
+      border:1px solid rgba(8,127,189,0.25);
+      background:linear-gradient(180deg,#ffffff 0%,#f4fbfe 100%);
+      color:var(--ink);
+      border-radius:99px; padding:9px 18px; cursor:pointer; white-space:nowrap;
+      font:800 12px/1 'Manrope','Cairo', sans-serif;
+      box-shadow:0 2px 8px rgba(8,127,189,0.06);
+      transition:all .25s cubic-bezier(0.2,0.8,0.2,1);
+    }
+    .lang-toggle:hover{
+      background:#ffffff;
+      border-color:rgba(8,127,189,0.5);
+      transform:translateY(-2px);
+      box-shadow:0 6px 16px rgba(8,127,189,0.16);
+    }
+    @media (width<=720px){ .header-right{ gap:10px; } }
+
+    /* =====================================================================
+       PREMIUM VISUAL LAYER — "climate console" identity & luxury polish
+       ===================================================================== */
+
+    /* High-definition font rendering */
+    body{
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+      background:
+        radial-gradient(1200px 700px at 15% -5%, rgba(85,212,231,0.22) 0%, rgba(217,241,250,0) 60%),
+        radial-gradient(1100px 700px at 88% 10%, rgba(8,127,189,0.15) 0%, rgba(231,246,252,0) 55%),
+        radial-gradient(1000px 800px at 50% 110%, rgba(85,212,231,0.18) 0%, rgba(223,242,249,0) 65%),
+        linear-gradient(180deg, #f9fcfe 0%, #edf6fb 100%);
+      background-attachment: fixed;
+    }
+    body::before{
+      content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
+      opacity:.15; mix-blend-mode:soft-light;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    main{ position:relative; z-index:1; }
+    section[id]{ scroll-margin-top:96px; }
+
+    /* Concept Bar */
+    .concept-bar{
+      background:linear-gradient(90deg, #05141d 0%, #0a2736 50%, #05141d 100%);
+      color:#ffffffc0;
+      border-bottom:1px solid rgba(85,212,231,0.2);
+    }
+    .concept-bar span{
+      background:rgba(85,212,231,0.14);
+      border:1px solid rgba(85,212,231,0.35);
+      border-radius:99px;
+      padding:3px 12px;
+      color:#55d4e7;
+      font-weight:700;
+      letter-spacing:.08em;
+    }
+
+    /* Sticky frosted header */
+    .site-header{
+      position:sticky; top:0; z-index:30;
+      background:rgba(249,252,254,0.85);
+      -webkit-backdrop-filter:saturate(180%) blur(18px);
+      backdrop-filter:saturate(180%) blur(18px);
+      border-bottom:1px solid rgba(11,36,48,0.08);
+      box-shadow:0 4px 20px rgba(11,36,48,0.03);
+    }
+    .brand-mark{
+      border:2px solid var(--ink);
+      box-shadow:0 4px 12px rgba(8,127,189,0.18);
+      transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .brand:hover .brand-mark{
+      transform:rotate(-4deg) scale(1.06);
+    }
+    .site-header nav a{
+      transition:color 0.2s ease;
+    }
+    .site-header nav a:hover{
+      color:var(--blue);
+    }
+    .site-header nav a:after{
+      background:linear-gradient(90deg, #087fbd, #55d4e7);
+      border-radius:2px;
+      height:2.5px;
+    }
+
+    /* Premium buttons with 3D depth and shimmer */
+    .button{
+      border-radius:12px;
+      font-weight:800;
+      letter-spacing:0.01em;
+      transition:all 0.3s cubic-bezier(0.2,0.8,0.2,1);
+    }
+    .button-primary{
+      background:linear-gradient(135deg, #087fbd 0%, #056fa6 100%);
+      color:#ffffff;
+      box-shadow:0 1px 0 rgba(255,255,255,0.3) inset, 0 18px 36px -10px rgba(8,127,189,0.5), 0 6px 14px rgba(7,26,36,0.12);
+    }
+    .button-primary:hover{
+      background:linear-gradient(135deg, #098ed2 0%, #067cb9 100%);
+      box-shadow:0 1px 0 rgba(255,255,255,0.4) inset, 0 26px 48px -12px rgba(8,127,189,0.65), 0 8px 20px rgba(7,26,36,0.18);
+      transform:translateY(-3px) scale(1.015);
+    }
+    .button-secondary{
+      background:rgba(255,255,255,0.8);
+      -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px);
+      border:1px solid rgba(11,36,48,0.16);
+      box-shadow:0 4px 14px rgba(11,36,48,0.04);
+    }
+    .button-secondary:hover{
+      background:#ffffff;
+      border-color:rgba(8,127,189,0.4);
+      transform:translateY(-3px);
+      box-shadow:0 14px 30px -10px rgba(7,26,36,0.18);
+    }
+    .button-white{
+      background:#ffffff;
+      color:var(--ink);
+      border-radius:14px;
+      box-shadow:0 20px 45px -10px rgba(4,18,26,0.45);
+      transition:all 0.3s cubic-bezier(0.2,0.8,0.2,1);
+    }
+    .button-white:hover{
+      transform:translateY(-3px) scale(1.02);
+      box-shadow:0 28px 55px -12px rgba(4,18,26,0.6);
+      background:#ffffff;
+    }
+    .wa-dot{
+      background:var(--cyan);
+      box-shadow:0 0 10px rgba(85,212,231,0.6);
+    }
+
+    /* Hero: cool bloom */
+    .hero{ position:relative; }
+    .hero::before{
+      content:""; position:absolute; z-index:0; inset-inline-end:-8%; top:4%;
+      width:min(620px,70vw); height:min(620px,70vw); border-radius:50%;
+      background:radial-gradient(circle,rgba(85,212,231,0.32),rgba(8,127,189,0.12) 45%,transparent 70%);
+      filter:blur(24px); pointer-events:none;
+    }
+    .hero > *{ position:relative; z-index:1; }
+
+    .eyebrow{
+      background:rgba(8,127,189,0.08);
+      border:1px solid rgba(8,127,189,0.18);
+      padding:6px 14px;
+      border-radius:99px;
+      width:fit-content;
+      color:#087fbd;
+      font-weight:700;
+    }
+    .eyebrow span{
+      box-shadow:0 0 8px rgba(255,112,66,0.8);
+    }
+    .hero h1{
+      color:#09212c;
+    }
+    .hero h1 em{
+      background:linear-gradient(135deg, #087fbd 0%, #055f93 100%);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      display:inline-block;
+    }
+    .hero-lead{
+      color:#3c5a68;
+      font-size:19px;
+      line-height:1.7;
+    }
+
+    .micro-proof span{
+      background:rgba(255,255,255,0.75);
+      -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+      border:1px solid rgba(8,127,189,0.15);
+      padding:7px 15px;
+      border-radius:99px;
+      box-shadow:0 2px 8px rgba(7,26,36,0.04);
+      color:#3c5a68;
+      font-weight:600;
+    }
+
+    /* Signature: elevated climate console */
+    .cooling-console{
+      background:
+        radial-gradient(130% 90% at 85% 5%, rgba(85,212,231,0.22) 0%, transparent 60%),
+        linear-gradient(165deg, #0a2a3a 0%, #061824 55%, #030d14 100%);
+      border:1px solid rgba(255,255,255,0.12);
+      border-radius:24px;
+      box-shadow:0 50px 110px -30px rgba(3,13,20,0.8), 0 0 0 1px rgba(85,212,231,0.15) inset, 0 1px 0 rgba(255,255,255,0.2) inset;
+    }
+    .cooling-console::before{
+      content:""; position:absolute; top:-38%; left:30%; width:75%; height:80%; z-index:0;
+      background:radial-gradient(circle,rgba(85,212,231,0.25),transparent 62%);
+      filter:blur(30px); pointer-events:none;
+    }
+    .airflow{
+      background:
+        radial-gradient(circle at 75% 75%, rgba(85,212,231,0.28), rgba(0,0,0,0) 45%),
+        linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%);
+      border:1px solid rgba(255,255,255,0.12);
+      border-radius:16px;
+    }
+    .unit{
+      background:linear-gradient(180deg, #ffffff 0%, #e6f4fa 100%);
+      border-radius:12px 12px 6px 6px;
+      box-shadow:0 20px 35px -8px rgba(0,0,0,0.5), 0 1px 0 #ffffff inset;
+      border:1px solid rgba(255,255,255,0.8);
+    }
+    .air-line{
+      border-bottom:2.5px solid #55d4e7;
+      filter:drop-shadow(0 0 8px rgba(85,212,231,0.8));
+    }
+    .temperature strong{
+      font-size:78px;
+      color:#55d4e7;
+      text-shadow:0 0 35px rgba(85,212,231,0.65), 0 0 10px rgba(85,212,231,0.9);
+    }
+    .console-proof{
+      border-top:1px solid rgba(255,255,255,0.12);
+      border-bottom:1px solid rgba(255,255,255,0.12);
+      background:rgba(255,255,255,0.02);
+      -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+    }
+    .console-proof div{
+      border-right:1px solid rgba(255,255,255,0.12);
+    }
+    .cooling-console > a{
+      background:linear-gradient(90deg, rgba(85,212,231,0.08) 0%, rgba(8,127,189,0.08) 100%);
+      padding:20px 24px;
+      border-top:1px solid rgba(255,255,255,0.08);
+      transition:all 0.25s ease;
+    }
+    .cooling-console > a:hover{
+      background:linear-gradient(90deg, rgba(85,212,231,0.18) 0%, rgba(8,127,189,0.18) 100%);
+      color:#55d4e7;
+    }
+
+    /* Glassy service cards + pill labels */
+    .services{ padding-top:140px; padding-bottom:150px; }
+    .service-card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.75) 100%);
+      -webkit-backdrop-filter:blur(16px); backdrop-filter:blur(16px);
+      border:1px solid rgba(255,255,255,0.85);
+      border-radius:20px;
+      padding:34px;
+      box-shadow:0 1px 0 rgba(255,255,255,0.95) inset, 0 24px 50px -20px rgba(28,74,93,0.18);
+      transition:all 0.35s cubic-bezier(0.2,0.8,0.2,1);
+    }
+    .service-card:hover{
+      transform:translateY(-10px) scale(1.015);
+      border-color:rgba(85,212,231,0.7);
+      box-shadow:0 1px 0 rgba(255,255,255,0.95) inset, 0 36px 70px -20px rgba(8,127,189,0.35), 0 0 25px rgba(85,212,231,0.2);
+    }
+    .service-code{
+      background:linear-gradient(135deg, rgba(8,127,189,0.12) 0%, rgba(85,212,231,0.15) 100%);
+      border:1px solid rgba(8,127,189,0.2);
+      border-radius:99px;
+      padding:7px 15px;
+      font-weight:700;
+      color:#087fbd;
+      letter-spacing:0.16em;
+    }
+    .service-card h3{
+      font-size:46px;
+      margin:38px 0 16px;
+      color:var(--ink);
+    }
+    .service-card a{
+      border-top:1px solid rgba(11,36,48,0.08);
+      padding-top:24px;
+      font-size:13px;
+      font-weight:800;
+      transition:color 0.2s ease;
+    }
+    .service-card a:hover{
+      color:var(--blue);
+    }
+
+    /* Trust strip: cool tint */
+    .trust-strip{
+      background:linear-gradient(180deg,#ecf8fc 0%,#dfefed 100%);
+      border-top:1px solid rgba(85,212,231,0.35);
+      border-bottom:1px solid rgba(85,212,231,0.35);
+      box-shadow:0 10px 30px -15px rgba(8,127,189,0.1);
+    }
+    .trust-inner strong{
+      font-size:20px;
+      color:var(--ink);
+      font-weight:800;
+    }
+
+    /* Method: richer dark with glow */
+    .method{
+      background:
+        radial-gradient(90% 130% at 100% 0%, rgba(8,127,189,0.28) 0%, transparent 60%),
+        linear-gradient(160deg, #092432 0%, #04141e 100%);
+      position:relative; overflow:hidden;
+    }
+    .steps li{
+      border-top:1px solid rgba(255,255,255,0.12);
+      padding:24px 12px;
+      border-radius:12px;
+      transition:all 0.3s ease;
+    }
+    .steps li:hover{
+      background:rgba(255,255,255,0.04);
+      transform:translateX(6px);
+    }
+    .steps > li > span{
+      background:rgba(85,212,231,0.1);
+      border:1px solid rgba(85,212,231,0.3);
+      border-radius:50%;
+      width:48px; height:48px;
+      display:grid; place-items:center;
+      font-weight:800; font-size:14px;
+      color:#55d4e7;
+      box-shadow:0 0 15px rgba(85,212,231,0.15);
+    }
+
+    /* Location: thermal-map treatment */
+    .location-card{
+      border:1px solid rgba(8,127,189,0.16);
+      border-radius:24px;
+      box-shadow:0 35px 80px -30px rgba(28,74,93,0.3);
+    }
+    .location-copy{
+      padding:72px 64px;
+    }
+    .map-pin{
+      box-shadow:0 14px 35px rgba(3,13,20,0.5);
+    }
+    .map-pin i{
+      box-shadow:0 0 0 8px rgba(255,112,66,0.3), 0 0 15px rgba(255,112,66,0.6);
+    }
+
+    /* Final CTA: gradient + frost lines */
+    .final-cta{
+      background:
+        radial-gradient(90% 160% at 10% 0%, rgba(85,212,231,0.4) 0%, transparent 65%),
+        linear-gradient(135deg, #0a8ed1 0%, #045a8e 100%);
+      position:relative; overflow:hidden;
+      box-shadow:0 25px 60px -15px rgba(8,127,189,0.4);
+    }
+    .final-cta::after{
+      content:""; position:absolute; inset:0; pointer-events:none;
+      background:repeating-linear-gradient(115deg,transparent 0 40px,rgba(255,255,255,0.04) 40px 41px);
+    }
+    .final-cta > *{ position:relative; z-index:1; }
+
+    /* Mobile CTA floating bar */
+    .mobile-cta{
+      background:rgba(7,26,36,0.92);
+      -webkit-backdrop-filter:blur(16px); backdrop-filter:blur(16px);
+      border:1px solid rgba(255,255,255,0.15);
+      border-radius:16px;
+      box-shadow:0 20px 45px rgba(0,0,0,0.4);
+      height:62px;
+    }
+
+    /* Phone numbers stay LTR and correctly grouped, even in RTL */
+    bdi{ unicode-bidi:isolate; }
+
+    /* ---- Motion: only when the visitor allows it ---- */
+    @media (prefers-reduced-motion:no-preference){
+      .hero-copy > *{ animation:dp-rise .7s cubic-bezier(.2,.7,.2,1) both; }
+      .hero-copy > *:nth-child(2){ animation-delay:.08s; }
+      .hero-copy > *:nth-child(3){ animation-delay:.16s; }
+      .hero-copy > *:nth-child(4){ animation-delay:.24s; }
+      .hero-copy > *:nth-child(5){ animation-delay:.32s; }
+      .cooling-console{ animation:dp-fade 1s ease .15s both; }
+      .air-line{ animation:dp-drift 6.5s ease-in-out infinite; }
+      .air-two{ animation-delay:.9s; }
+      .air-three{ animation-delay:1.7s; }
+      .live-dot{ animation:dp-pulse 2.6s ease-in-out infinite; }
+    }
+    @keyframes dp-rise{ from{opacity:0;transform:translateY(16px);} to{opacity:1;transform:none;} }
+    @keyframes dp-fade{ from{opacity:0;transform:translateY(10px) scale(.99);} to{opacity:1;transform:none;} }
+    @keyframes dp-drift{ 0%,100%{transform:rotate(10deg) translateX(0);} 50%{transform:rotate(10deg) translateX(16px);} }
+    @keyframes dp-pulse{ 0%,100%{box-shadow:0 0 0 5px rgba(85,212,231,.10);} 50%{box-shadow:0 0 0 10px rgba(85,212,231,0);} }
+  </style>
+</head>
+<body>
+<main>
+  <div class="concept-bar">
+    <span data-ar="نموذج توضيحي">Concept de démonstration</span>
+    <p data-ar="المحتوى والهوية للمراجعة مع KETTANI CLIM & ENERGIE">Contenu et identité à valider avec KETTANI CLIM & ENERGIE</p>
+  </div>
+
+  <header class="site-header shell">
+    <a class="brand" href="#top" aria-label="KETTANI CLIM & ENERGIE — Accueil">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="brand-copy"><strong>KETTANI</strong><small>CLIM &amp; ENERGIE</small></span>
+    </a>
+    <nav aria-label="Navigation principale">
+      <a href="#services" data-ar="الخدمات">Services</a>
+      <a href="#methode" data-ar="طريقة العمل">Comment ça marche</a>
+      <a href="#contact" data-ar="اتصل بنا">Contact</a>
+    </nav>
+    <div class="header-right">
+      <button class="lang-toggle" type="button" data-lang-toggle aria-label="Changer de langue / تغيير اللغة">العربية</button>
+      <a class="header-call" href="tel:+212707046007">
+        <span data-ar="اتصل الآن">Appeler maintenant</span><strong><bdi>07 07 04 60 07</bdi></strong>
+      </a>
+    </div>
+  </header>
+
+  <section class="hero shell" id="top">
+    <div class="hero-copy">
+      <div class="eyebrow" data-ar="<span></span> تكييف الهواء بالدار البيضاء"><span></span> Climatisation à Casablanca</div>
+      <h1 data-ar="جو بارد فدارك،<br><em>بلا ما تضيّع نهارك.</em>">Votre intérieur frais.<br><em>Sans perdre la journée.</em></h1>
+      <p class="hero-lead" data-ar="تركيب، إصلاح ولا صيانة: شرح لينا لحتياجك واطلب تقدير الثمن مباشرة على واتساب.">Installation, dépannage ou entretien : expliquez votre besoin et demandez une estimation directement sur WhatsApp.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="https://wa.me/212707046007?text=Bonjour%20KETTANI%20CLIM%20%26%20ENERGIE%2C%20je%20souhaite%20recevoir%20une%20estimation%20pour%20un%20besoin%20en%20climatisation%20%C3%A0%20Casablanca." target="_blank" rel="noreferrer"><span class="wa-dot" aria-hidden="true">↗</span><span data-ar="اطلب تقدير الثمن">Demander une estimation</span></a>
+        <a class="button button-secondary" href="tel:+212707046007" data-ar="اتصل على <bdi>07 07 04 60 07</bdi>">Appeler le <bdi>07 07 04 60 07</bdi></a>
+      </div>
+      <div class="micro-proof">
+        <span data-ar="تدخل في عين المكان">Service sur site</span>
+        <span data-ar="تقدير الثمن أونلاين">Estimation en ligne</span>
+        <span data-ar="الدار البيضاء">Casablanca</span>
+      </div>
+    </div>
+    <aside class="cooling-console" aria-label="Informations clés">
+      <div class="console-top">
+        <span class="live-dot"></span>
+        <p data-ar="طلب واضح فأقل من دقيقة">Une demande claire en moins d’une minute</p>
+        <span class="console-code">CASA · 33°</span>
+      </div>
+      <div class="airflow" aria-hidden="true">
+        <div class="unit"><span>KETTANI</span><div class="unit-vent"></div></div>
+        <div class="air-line air-one"></div><div class="air-line air-two"></div><div class="air-line air-three"></div>
+        <div class="temperature"><strong>22°</strong><small data-ar="راحة">confort</small></div>
+      </div>
+      <div class="console-proof">
+        <div><strong>4,8<span>/5</span></strong><small data-ar="تقييم Google">Note Google</small></div>
+        <div><strong>28</strong><small data-ar="رأي عام">Avis publics</small></div>
+        <div><strong>Casa</strong><small data-ar="خدمة بالدار البيضاء">Zone Khouzama</small></div>
+      </div>
+      <a href="https://wa.me/212707046007?text=Bonjour%20KETTANI%20CLIM%20%26%20ENERGIE%2C%20je%20souhaite%20recevoir%20une%20estimation%20pour%20un%20besoin%20en%20climatisation%20%C3%A0%20Casablanca." target="_blank" rel="noreferrer" data-ar="افتح واتساب <span>←</span>">Ouvrir WhatsApp <span>→</span></a>
+    </aside>
+  </section>
+
+  <section class="trust-strip" aria-label="Preuves de confiance">
+    <div class="shell trust-inner">
+      <p data-ar="<strong>4,8 ★</strong> على Google"><strong>4,8 ★</strong> sur Google</p>
+      <p data-ar="<strong>28</strong> رأي عام"><strong>28</strong> avis publics</p>
+      <p data-ar="<strong>بيع · تركيب</strong> وصيانة"><strong>Vente · pose</strong> &amp; SAV</p>
+      <p data-ar="<strong>تدخل</strong> بالدار البيضاء"><strong>Sur site</strong> à Casablanca</p>
+    </div>
+  </section>
+
+  <section class="services shell" id="services">
+    <div class="section-heading">
+      <p class="eyebrow" data-ar="<span></span> اختر الخدمة"><span></span> Choisissez votre besoin</p>
+      <h2 data-ar="أقصر طريق<br>للتدخل المناسب.">Un raccourci vers<br>la bonne intervention.</h2>
+      <p data-ar="كل طلب كيفتح لك محادثة واتساب مجهزة من قبل. ما بقا ليك غير تزيد الحي ديالك والوقت لي مناسب ليك.">Chaque demande ouvre une conversation WhatsApp déjà préparée. Vous n’avez plus qu’à ajouter votre quartier et vos disponibilités.</p>
+    </div>
+    <div class="service-grid">
+      <article class="service-card">
+        <div class="service-code" data-ar="ركّب">POSER</div>
+        <h3 data-ar="التركيب">Installation</h3>
+        <p data-ar="مرافقة واضحة باش تختار البلاصة وتطلق طلب التركيب ديالك.">Un accompagnement clair pour choisir l’emplacement et lancer votre demande d’installation.</p>
+        <a href="https://wa.me/212707046007?text=Bonjour%20KETTANI%20CLIM%20%26%20ENERGIE%2C%20je%20souhaite%20une%20estimation%20pour%20l%E2%80%99installation%20d%E2%80%99une%20climatisation%20%C3%A0%20Casablanca." target="_blank" rel="noreferrer" data-ar="اطلب التركيب <span>↗</span>">Demander une installation <span>↗</span></a>
+      </article>
+      <article class="service-card">
+        <div class="service-code" data-ar="صلّح">RELANCER</div>
+        <h3 data-ar="الإصلاح">Dépannage</h3>
+        <p data-ar="ما بقاش كيبرّد، صوت غير عادي ولا تسربات؟ وصف لينا المشكل مباشرة على واتساب.">Plus de froid, bruit inhabituel ou fuite ? Décrivez le symptôme directement sur WhatsApp.</p>
+        <a href="https://wa.me/212707046007?text=Bonjour%20KETTANI%20CLIM%20%26%20ENERGIE%2C%20ma%20climatisation%20pr%C3%A9sente%20une%20panne.%20Je%20souhaite%20demander%20une%20intervention%20%C3%A0%20Casablanca." target="_blank" rel="noreferrer" data-ar="بلّغ عن عطل <span>↗</span>">Signaler une panne <span>↗</span></a>
+      </article>
+      <article class="service-card">
+        <div class="service-code" data-ar="حافظ">PRÉSERVER</div>
+        <h3 data-ar="الصيانة">Entretien</h3>
+        <p data-ar="برمج تنظيف ومراقبة جهازك قبل ما تجي السخانة.">Planifiez le nettoyage et le contrôle de votre équipement avant les fortes chaleurs.</p>
+        <a href="https://wa.me/212707046007?text=Bonjour%20KETTANI%20CLIM%20%26%20ENERGIE%2C%20je%20souhaite%20planifier%20l%E2%80%99entretien%20de%20ma%20climatisation%20%C3%A0%20Casablanca." target="_blank" rel="noreferrer" data-ar="برمج الصيانة <span>↗</span>">Planifier un entretien <span>↗</span></a>
+      </article>
+    </div>
+  </section>
+
+  <section class="method" id="methode">
+    <div class="shell method-grid">
+      <div class="method-intro">
+        <p class="eyebrow light" data-ar="<span></span> بسيط ومباشر"><span></span> Simple et direct</p>
+        <h2 data-ar="من المشكل<br>للموعد.">Du problème<br>au rendez-vous.</h2>
+        <p data-ar="بلا فورمولير طويل. ثلاث معلومات كافية باش نبداو نعالجو طلبك.">Pas de formulaire interminable. Trois informations suffisent pour commencer à qualifier votre demande.</p>
+      </div>
+      <ol class="steps">
+        <li><span>01</span><div><strong data-ar="اختر الخدمة">Choisissez votre besoin</strong><p data-ar="تركيب، عطل أو صيانة.">Installation, panne ou entretien.</p></div></li>
+        <li><span>02</span><div><strong data-ar="صيفط التفاصيل">Envoyez les détails</strong><p data-ar="الحي، نوع الجهاز وتصويرة إلا كانت مفيدة.">Quartier, type d’appareil et photo si utile.</p></div></li>
+        <li><span>03</span><div><strong data-ar="اتفقو على الخطوة الجاية">Convenez de la suite</strong><p data-ar="توصل بالجواب ونظمو التدخل.">Recevez une réponse et organisez l’intervention.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="location shell" id="contact">
+    <div class="location-card">
+      <div class="map-grid" aria-hidden="true">
+        <span class="map-road road-a"></span><span class="map-road road-b"></span><span class="map-road road-c"></span>
+        <span class="map-pin"><i></i>KHOUZAMA</span>
+      </div>
+      <div class="location-copy">
+        <p class="eyebrow" data-ar="<span></span> منطقة الخدمة"><span></span> Zone de service</p>
+        <h2 data-ar="كاينين فالخزامى.<br>فخدمة الدار البيضاء.">Basés à Khouzama.<br>Au service de Casablanca.</h2>
+        <p data-ar="حي الخزامى · الدار البيضاء">Quartier Khouzama · Casablanca</p>
+        <div class="location-actions">
+          <a class="button button-primary" href="https://wa.me/212707046007?text=Bonjour%20KETTANI%20CLIM%20%26%20ENERGIE%2C%20je%20souhaite%20recevoir%20une%20estimation%20pour%20un%20besoin%20en%20climatisation%20%C3%A0%20Casablanca." target="_blank" rel="noreferrer" data-ar="راسلنا على واتساب">Écrire sur WhatsApp</a>
+          <a class="text-link" href="tel:+212707046007" data-ar="اتصل <bdi>07 07 04 60 07</bdi> ←">Appeler <bdi>07 07 04 60 07</bdi> →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="shell final-inner">
+      <div>
+        <p class="eyebrow light" data-ar="<span></span> واجد تبدا؟"><span></span> Prêt à commencer ?</p>
+        <h2 data-ar="شرح لينا لحتياجك.<br><em>وحنا نتكلفو بالباقي.</em>">Expliquez votre besoin.<br><em>On organise la suite.</em></h2>
+      </div>
+      <a class="button button-white" href="https://wa.me/212707046007?text=Bonjour%20KETTANI%20CLIM%20%26%20ENERGIE%2C%20je%20souhaite%20recevoir%20une%20estimation%20pour%20un%20besoin%20en%20climatisation%20%C3%A0%20Casablanca." target="_blank" rel="noreferrer" data-ar="اطلب تقدير الثمن <span>↗</span>">Demander une estimation <span>↗</span></a>
+    </div>
+  </section>
+
+  <footer class="footer shell">
+    <div class="brand footer-brand">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="brand-copy"><strong>KETTANI</strong><small>CLIM &amp; ENERGIE</small></span>
+    </div>
+    <p data-ar="نموذج تجاري مبني على معلومات مهنية عمومية. خاصو يتصادق عليه قبل النشر.">Concept commercial basé sur des informations professionnelles publiques. À faire approuver avant diffusion.</p>
+    <a href="tel:+212707046007"><bdi>07 07 04 60 07</bdi></a>
+  </footer>
+
+  <div class="mobile-cta" aria-label="Actions rapides">
+    <a href="tel:+212707046007" data-ar="اتصل">Appeler</a>
+    <a href="https://wa.me/212707046007?text=Bonjour%20KETTANI%20CLIM%20%26%20ENERGIE%2C%20je%20souhaite%20recevoir%20une%20estimation%20pour%20un%20besoin%20en%20climatisation%20%C3%A0%20Casablanca." target="_blank" rel="noreferrer" data-ar="واتساب ↗">WhatsApp ↗</a>
+  </div>
+</main>
+
+<script>
+  (function () {
+    var els = document.querySelectorAll('[data-ar]');
+    // capture the original French markup as the "fr" version
+    els.forEach(function (el) { el.setAttribute('data-fr', el.innerHTML); });
+    var btns = document.querySelectorAll('[data-lang-toggle]');
+    function apply(lang) {
+      var root = document.documentElement;
+      root.setAttribute('lang', lang);
+      root.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+      els.forEach(function (el) { el.innerHTML = el.getAttribute('data-' + lang); });
+      btns.forEach(function (b) { b.textContent = lang === 'ar' ? 'Français' : 'العربية'; });
+      try { localStorage.setItem('dp_lang', lang); } catch (e) {}
+    }
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var cur = document.documentElement.getAttribute('dir') === 'rtl' ? 'ar' : 'fr';
+        apply(cur === 'ar' ? 'fr' : 'ar');
+      });
+    });
+    var saved = null;
+    try { saved = localStorage.getItem('dp_lang'); } catch (e) {}
+    apply(saved || 'fr');
+  })();
+</script>
+</body>
+</html>
