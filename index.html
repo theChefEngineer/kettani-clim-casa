@@ -43,10 +43,10 @@ img{ max-width:100%; display:block }
 :focus-visible{ outline:2px solid var(--lagune); outline-offset:3px; border-radius:4px }
 .wrap{ width:min(var(--maxw),100% - 40px); margin-inline:auto }
 .mono{ font-family:var(--mono); font-variant-numeric:tabular-nums }
-.eyebrow{ font-family:var(--mono); font-size:12px; font-weight:500; text-transform:uppercase;
-  letter-spacing:.08em; color:var(--lagune); display:inline-flex; align-items:center; gap:8px }
-.eyebrow::before{ content:""; width:22px; height:2px; background:var(--lagune) }
-h1,h2,h3{ font-family:var(--disp); font-weight:800; line-height:1.05; letter-spacing:-.01em }
+.i-arrow,.i-plus{ flex:none; stroke:currentColor; fill:none }
+.i-arrow{ width:15px; height:15px }
+.i-plus{ width:17px; height:17px; color:var(--lagune); transition:transform .2s ease }
+h1,h2,h3{ font-family:var(--disp); font-weight:800; line-height:1.05; letter-spacing:-.02em; text-wrap:balance }
 section{ padding:clamp(72px,10vw,120px) 0 }
 
 /* ---- Demo ribbon ---- */
@@ -85,7 +85,7 @@ section{ padding:clamp(72px,10vw,120px) 0 }
 .hero{ padding-top:clamp(28px,5vw,56px) }
 .hero-grid{ display:grid; gap:36px; align-items:center }
 @media(min-width:820px){ .hero-grid{ grid-template-columns:1.15fr .85fr } }
-.hero h1{ font-size:clamp(40px,7vw,72px); margin:18px 0 20px }
+.hero h1{ font-size:clamp(40px,7vw,72px); margin:0 0 22px; letter-spacing:-.035em }
 .hero .sub{ font-size:clamp(17px,2.2vw,20px); max-width:34ch; color:#274049 }
 .hero-cta{ display:flex; flex-wrap:wrap; gap:12px; margin:28px 0 22px }
 .chips{ display:flex; flex-wrap:wrap; gap:8px }
@@ -104,8 +104,8 @@ section{ padding:clamp(72px,10vw,120px) 0 }
 .thermo-label{ font-family:var(--mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase;
   color:rgba(241,244,243,.72); margin-top:12px; text-align:center; min-height:1.2em }
 .gauge{ width:min(240px,80%); height:4px; border-radius:999px; background:rgba(255,255,255,.14); margin-top:20px; overflow:hidden }
-.gauge-fill{ height:100%; width:100%; border-radius:999px;
-  background:linear-gradient(90deg,var(--chaleur),var(--lagune)); transition:width 1.4s ease-out }
+.gauge-fill{ height:100%; width:100%; border-radius:999px; transform-origin:left;
+  background:linear-gradient(90deg,var(--chaleur),var(--lagune)); transition:transform 1.4s ease-out }
 
 /* ---- Mobile sticky bar ---- */
 .sticky{ position:fixed; left:0; right:0; bottom:0; z-index:40; display:grid; grid-template-columns:1fr 1fr;
@@ -121,7 +121,7 @@ body{ padding-bottom:72px }
 @media(min-width:768px){ body{ padding-bottom:0 } }
 
 /* ---- Services ---- */
-.sec-head h2{ font-size:clamp(28px,4vw,44px); margin:16px 0 0 }
+.sec-head h2{ font-size:clamp(28px,4vw,44px); margin:0 }
 .cards{ display:grid; gap:16px; margin-top:44px }
 @media(min-width:720px){ .cards{ grid-template-columns:repeat(3,1fr) } }
 .card{ background:var(--glace); border:1px solid var(--line); border-radius:12px; padding:26px 24px;
@@ -132,7 +132,7 @@ body{ padding-bottom:72px }
 .card p{ color:#33484f; font-size:15px; flex:1 }
 .card .go{ margin-top:18px; font-family:var(--mono); font-size:13px; font-weight:600; color:var(--lagune);
   display:inline-flex; align-items:center; gap:8px }
-.card.urgent{ border-inline-start:3px solid var(--chaleur) }
+.card.urgent{ border-color:rgba(228,87,46,.5) }
 .tag-urgence{ align-self:flex-start; font-family:var(--mono); font-size:10px; letter-spacing:.12em;
   color:var(--chaleur); border:1px solid var(--chaleur); border-radius:999px; padding:3px 9px; margin-bottom:12px }
 
@@ -148,22 +148,22 @@ body{ padding-bottom:72px }
 
 /* ---- Proof ---- */
 .proof{ background:var(--encre); color:var(--blanc) }
-.proof .eyebrow{ color:var(--glace) } .proof .eyebrow::before{ background:var(--glace) }
+.proof h2{ font-size:clamp(28px,4vw,44px); margin-bottom:14px }
 .proof-score{ display:flex; align-items:baseline; gap:16px; margin:18px 0 8px; flex-wrap:wrap }
 .proof-score b{ font-family:var(--mono); font-weight:600; font-size:clamp(48px,9vw,64px); color:var(--glace) }
 .proof-score span{ font-size:16px; color:rgba(241,244,243,.8) }
 .quotes{ display:grid; gap:14px; margin-top:34px } @media(min-width:720px){ .quotes{ grid-template-columns:repeat(3,1fr) } }
 .quote{ background:rgba(221,240,241,.08); border:1px solid rgba(221,240,241,.16); border-radius:12px;
   padding:22px; min-height:120px; display:flex; align-items:center; justify-content:center;
-  color:rgba(241,244,243,.6); font-family:var(--mono); font-size:12px; text-align:center }
+  color:rgba(241,244,243,.72); font-family:var(--mono); font-size:12px; text-align:center }
 .photos{ display:grid; gap:12px; grid-template-columns:repeat(2,1fr); margin-top:30px }
 @media(min-width:720px){ .photos{ grid-template-columns:repeat(4,1fr) } }
 .photo-slot{ aspect-ratio:4/3; background:rgba(221,240,241,.06); border:1px dashed rgba(221,240,241,.25);
   border-radius:12px; display:flex; align-items:center; justify-content:center; text-align:center;
-  font-family:var(--mono); font-size:11px; color:rgba(241,244,243,.5); padding:12px }
+  font-family:var(--mono); font-size:11px; color:rgba(241,244,243,.62); padding:12px }
 
 /* ---- Zone ---- */
-.zone h2{ font-size:clamp(28px,4vw,44px) }
+.zone h2,.faq h2{ font-size:clamp(28px,4vw,44px) }
 .quartiers{ display:flex; flex-wrap:wrap; gap:8px; margin:26px 0 30px }
 .zone-cta{ display:flex; flex-wrap:wrap; gap:12px }
 
@@ -174,8 +174,7 @@ body{ padding-bottom:72px }
   font-family:var(--body); font-weight:600; font-size:clamp(16px,2vw,18px); color:var(--encre);
   padding:20px 0; display:flex; align-items:center; justify-content:space-between; gap:16px; list-style:none }
 .faq-q::-webkit-details-marker{ display:none }
-.faq-q .mk{ font-family:var(--mono); color:var(--lagune); font-size:22px; flex:none; transition:transform .2s }
-.faq[open] .faq-q .mk{ transform:rotate(45deg) }
+.faq[open] .faq-q .i-plus{ transform:rotate(45deg) }
 .faq-a{ padding:0 0 22px; font-size:15px; color:#33484f; max-width:62ch }
 .faq-a .blank{ font-family:var(--mono); color:var(--lagune) }
 .faq-note{ font-family:var(--mono); font-size:12px; color:var(--lagune); margin-top:16px }
@@ -191,7 +190,8 @@ body{ padding-bottom:72px }
 .footer .disc{ font-size:12px; color:#5b7078; max-width:46ch; line-height:1.5 }
 .footer .fphone{ font-family:var(--mono); font-weight:500; user-select:text }
 
-html[dir="rtl"] .arrow{ display:inline-block; transform:scaleX(-1) }
+html[dir="rtl"] .i-arrow{ transform:scaleX(-1) }
+html[dir="rtl"] .gauge-fill{ transform-origin:right }
 
 @media(prefers-reduced-motion:reduce){
   *{ transition:none !important; scroll-behavior:auto !important }
@@ -214,7 +214,6 @@ html[dir="rtl"] .arrow{ display:inline-block; transform:scaleX(-1) }
 <section class="wrap hero">
   <div class="hero-grid">
     <div>
-      <span class="eyebrow" data-ar="تكييف الهواء · الدار البيضاء">Climatisation · Casablanca</span>
       <h1 data-ar="داخل منزلك بارد.<br>بلا ما تضيع نهارك.">Votre intérieur frais.<br>Sans perdre la journée.</h1>
       <p class="sub" data-ar="تركيب، تصليح أو صيانة: شرح لينا لحتياجك على واتساب.">Installation, dépannage ou entretien : expliquez votre besoin sur WhatsApp.</p>
       <div class="hero-cta">
@@ -232,7 +231,7 @@ html[dir="rtl"] .arrow{ display:inline-block; transform:scaleX(-1) }
     </div>
     <div class="thermo" id="thermo">
       <div class="thermo-read"><span class="thermo-num">33</span><span class="thermo-deg">°</span></div>
-      <div class="thermo-label" data-l-fr-start="Dehors — Casablanca" data-l-fr-end="Chez vous" data-l-ar-start="برّا — الدار البيضاء" data-l-ar-end="فدارك">Dehors — Casablanca</div>
+      <div class="thermo-label" data-l-fr-start="Dehors · Casablanca" data-l-fr-end="Chez vous" data-l-ar-start="برّا · الدار البيضاء" data-l-ar-end="فدارك">Dehors · Casablanca</div>
       <div class="gauge"><div class="gauge-fill"></div></div>
     </div>
   </div>
@@ -240,7 +239,6 @@ html[dir="rtl"] .arrow{ display:inline-block; transform:scaleX(-1) }
 
 <section class="wrap services">
   <div class="sec-head">
-    <span class="eyebrow" data-ar="اختر خدمتك">Choisissez votre besoin</span>
     <h2 data-ar="أقصر طريق للتدخل المناسب.">Un raccourci vers la bonne intervention.</h2>
   </div>
   <div class="cards">
@@ -248,7 +246,7 @@ html[dir="rtl"] .arrow{ display:inline-block; transform:scaleX(-1) }
       <div class="k" data-ar="تركيب">POSER</div>
       <h3 data-ar="التركيب">Installation</h3>
       <p data-ar="مرافقة واضحة باش تختار البلاصة وتطلق طلب التركيب ديالك.">Un accompagnement clair pour choisir l’emplacement et lancer votre demande d’installation.</p>
-      <a class="go" data-wa data-msg="Bonjour KETTANI CLIM & ENERGIE, je souhaite une estimation pour l’installation d’une climatisation à Casablanca." data-msg-ar="السلام عليكم، أرغب في تقدير لتركيب مكيّف في الدار البيضاء." href="#" target="_blank" rel="noreferrer"><span data-ar="اطلب التركيب">Demander une installation</span> <span class="arrow">→</span></a>
+      <a class="go" data-wa data-msg="Bonjour KETTANI CLIM & ENERGIE, je souhaite une estimation pour l’installation d’une climatisation à Casablanca." data-msg-ar="السلام عليكم، أرغب في تقدير لتركيب مكيّف في الدار البيضاء." href="#" target="_blank" rel="noreferrer"><span data-ar="اطلب التركيب">Demander une installation</span> <svg class="i-arrow" viewBox="0 0 16 16" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 8h9M8 4.5 11.5 8 8 11.5"/></svg></a>
     </article>
     <article class="card urgent">
       <div class="tag-urgence" data-ar="مستعجل">URGENCE</div>
@@ -256,20 +254,19 @@ html[dir="rtl"] .arrow{ display:inline-block; transform:scaleX(-1) }
       <h3 data-ar="الإصلاح">Dépannage</h3>
       <p data-ar="ما بقاش كيبرّد، صوت غير عادي ولا تسربات؟ وصف لينا المشكل مباشرة على واتساب.">Plus de froid, bruit inhabituel ou fuite ? Décrivez le symptôme directement sur WhatsApp.</p>
       <!-- Add when client confirms same-day service: "Souvent le jour même" -->
-      <a class="go" data-wa data-msg="Bonjour KETTANI CLIM & ENERGIE, ma climatisation présente une panne. Je souhaite demander une intervention à Casablanca." data-msg-ar="السلام عليكم، المكيّف عندي فيه عطل وأرغب في طلب تدخّل في الدار البيضاء." href="#" target="_blank" rel="noreferrer"><span data-ar="بلّغ عن عطل">Signaler une panne</span> <span class="arrow">→</span></a>
+      <a class="go" data-wa data-msg="Bonjour KETTANI CLIM & ENERGIE, ma climatisation présente une panne. Je souhaite demander une intervention à Casablanca." data-msg-ar="السلام عليكم، المكيّف عندي فيه عطل وأرغب في طلب تدخّل في الدار البيضاء." href="#" target="_blank" rel="noreferrer"><span data-ar="بلّغ عن عطل">Signaler une panne</span> <svg class="i-arrow" viewBox="0 0 16 16" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 8h9M8 4.5 11.5 8 8 11.5"/></svg></a>
     </article>
     <article class="card">
       <div class="k" data-ar="صيانة">PRÉSERVER</div>
       <h3 data-ar="الصيانة">Entretien</h3>
       <p data-ar="برمج تنظيف ومراقبة جهازك قبل ما تجي السخانة.">Planifiez le nettoyage et le contrôle de votre équipement avant les fortes chaleurs.</p>
-      <a class="go" data-wa data-msg="Bonjour KETTANI CLIM & ENERGIE, je souhaite planifier l’entretien de ma climatisation à Casablanca." data-msg-ar="السلام عليكم، أرغب في برمجة صيانة للمكيّف قبل فصل الصيف." href="#" target="_blank" rel="noreferrer"><span data-ar="برمج الصيانة">Planifier un entretien</span> <span class="arrow">→</span></a>
+      <a class="go" data-wa data-msg="Bonjour KETTANI CLIM & ENERGIE, je souhaite planifier l’entretien de ma climatisation à Casablanca." data-msg-ar="السلام عليكم، أرغب في برمجة صيانة للمكيّف قبل فصل الصيف." href="#" target="_blank" rel="noreferrer"><span data-ar="برمج الصيانة">Planifier un entretien</span> <svg class="i-arrow" viewBox="0 0 16 16" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 8h9M8 4.5 11.5 8 8 11.5"/></svg></a>
     </article>
   </div>
 </section>
 
 <section class="wrap process">
   <div class="sec-head">
-    <span class="eyebrow" data-ar="بسيط ومباشر">Simple et direct</span>
     <h2 data-ar="من المشكل للموعد.">Du problème au rendez-vous.</h2>
   </div>
   <div class="steps">
@@ -281,8 +278,8 @@ html[dir="rtl"] .arrow{ display:inline-block; transform:scaleX(-1) }
 
 <section class="proof">
   <div class="wrap">
-    <span class="eyebrow" data-ar="منحونا ثقتهم">Ils nous ont fait confiance</span>
-    <div class="proof-score"><b>4,8</b><span data-ar="على Google — 28 رأي عام">sur Google — 28 avis publics</span></div>
+    <h2 data-ar="منحونا ثقتهم">Ils nous ont fait confiance.</h2>
+    <div class="proof-score"><b>4,8</b><span data-ar="على Google · 28 رأي عام">sur Google · 28 avis publics</span></div>
     <div class="quotes">
       <div class="quote" data-ar="[رأي حقيقي من Google — للإدراج]">[Avis Google réel — à insérer]</div>
       <div class="quote" data-ar="[رأي حقيقي من Google — للإدراج]">[Avis Google réel — à insérer]</div>
@@ -298,7 +295,6 @@ html[dir="rtl"] .arrow{ display:inline-block; transform:scaleX(-1) }
 </section>
 
 <section class="wrap zone">
-  <span class="eyebrow" data-ar="منطقة الخدمة">Zone de service</span>
   <h2 data-ar="كاينين فالخزامى.<br>فخدمة الدار البيضاء.">Basés à Khouzama.<br>Au service de Casablanca.</h2>
   <!-- [liste des quartiers à confirmer avec le client] -->
   <div class="quartiers">
@@ -316,22 +312,21 @@ html[dir="rtl"] .arrow{ display:inline-block; transform:scaleX(-1) }
 </section>
 
 <section class="wrap faq">
-  <span class="eyebrow" data-ar="أسئلة شائعة">FAQ &amp; prix indicatifs</span>
   <h2 data-ar="أسئلة شائعة وأثمنة تقريبية">Questions fréquentes &amp; prix indicatifs.</h2>
   <div class="faq-list">
-    <details class="faq"><summary class="faq-q"><span data-ar="شحال كتكلف تركيب سبليت؟">Combien coûte la pose d’un split ?</span><span class="mk">+</span></summary>
+    <details class="faq"><summary class="faq-q"><span data-ar="شحال كتكلف تركيب سبليت؟">Combien coûte la pose d’un split ?</span><svg class="i-plus" viewBox="0 0 16 16" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M8 3.5v9M3.5 8h9"/></svg></summary>
       <div class="faq-a" data-ar="التركيب العادي ابتداءً من &lt;span class=&quot;blank&quot;&gt;___ درهم&lt;/span&gt; (التجهيز منفصل). كل منزل مختلف: صيفط تصويرة ديال البلاصة على واتساب باش نعطيوك تقدير دقيق.">Pose standard <span class="blank">à partir de ___ DH</span> (fourniture séparée). Chaque logement est différent : envoyez une photo de l’emplacement sur WhatsApp pour une estimation précise.</div>
     </details>
-    <details class="faq"><summary class="faq-q"><span data-ar="فقداش من وقت كتتدخلو؟">En combien de temps intervenez-vous ?</span><span class="mk">+</span></summary>
+    <details class="faq"><summary class="faq-q"><span data-ar="فقداش من وقت كتتدخلو؟">En combien de temps intervenez-vous ?</span><svg class="i-plus" viewBox="0 0 16 16" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M8 3.5v9M3.5 8h9"/></svg></summary>
       <div class="faq-a" data-ar="تقدير فنفس اليوم على واتساب. التدخل حسب البرنامج — حدد الحي ديالك باش نعطيوك موعد.">Estimation le jour même sur WhatsApp. Intervention selon planning — précisez votre quartier pour un créneau. <span class="blank">[délais à confirmer]</span></div>
     </details>
-    <details class="faq"><summary class="faq-q"><span data-ar="شنو هي الماركات اللي كتركبو؟">Quelles marques installez-vous ?</span><span class="mk">+</span></summary>
+    <details class="faq"><summary class="faq-q"><span data-ar="شنو هي الماركات اللي كتركبو؟">Quelles marques installez-vous ?</span><svg class="i-plus" viewBox="0 0 16 16" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M8 3.5v9M3.5 8h9"/></svg></summary>
       <div class="faq-a"><span class="blank">___ [marques à confirmer : ex. LG, Gree, Midea, Daikin]</span></div>
     </details>
-    <details class="faq"><summary class="faq-q"><span data-ar="واش التدخل مضمون؟">L’intervention est-elle garantie ?</span><span class="mk">+</span></summary>
+    <details class="faq"><summary class="faq-q"><span data-ar="واش التدخل مضمون؟">L’intervention est-elle garantie ?</span><svg class="i-plus" viewBox="0 0 16 16" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M8 3.5v9M3.5 8h9"/></svg></summary>
       <div class="faq-a"><span class="blank">___ [garantie à confirmer]</span></div>
     </details>
-    <details class="faq"><summary class="faq-q"><span data-ar="شحال من مرة خاص نصاوب الكليما؟">À quelle fréquence entretenir sa clim ?</span><span class="mk">+</span></summary>
+    <details class="faq"><summary class="faq-q"><span data-ar="شحال من مرة خاص نصاوب الكليما؟">À quelle fréquence entretenir sa clim ?</span><svg class="i-plus" viewBox="0 0 16 16" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M8 3.5v9M3.5 8h9"/></svg></summary>
       <div class="faq-a" data-ar="تنظيف واحد قبل الصيف على الأقل؛ مرتين فالعام فالاستعمال المكثف.">Un nettoyage avant l’été au minimum ; deux passages par an en usage intensif.</div>
     </details>
   </div>
@@ -415,11 +410,11 @@ html[dir="rtl"] .arrow{ display:inline-block; transform:scaleX(-1) }
     var fill = thermo.querySelector('.gauge-fill');
     var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
     if(reduce){
-      num.textContent='22'; thermo.classList.add('cool'); fill.style.width='40%'; thermo.dataset.state='end';
+      num.textContent='22'; thermo.classList.add('cool'); fill.style.transform='scaleX(0.4)'; thermo.dataset.state='end';
     } else {
       thermo.dataset.state='start';
       setTimeout(function(){
-        fill.style.width='40%';
+        fill.style.transform='scaleX(0.4)';
         var v=33;
         var iv=setInterval(function(){
           v--; num.textContent=v;
